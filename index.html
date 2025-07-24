@@ -9,10 +9,9 @@
 <body>
 
 <audio id="ocean-sound" loop preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/04/audio_b19c5224db.mp3?filename=ocean-waves-6327.mp3" type="audio/mp3" />
+  <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
   Your browser does not support the audio element.
 </audio>
-
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
 <header class="animated-header">
@@ -59,33 +58,6 @@
   <p>&copy; 2025 Ron Zlatin. Crafted with care 🌊</p>
 </footer>
 
-<script>
-  const audio = document.getElementById('ocean-sound');
-  const btn = document.getElementById('toggle-sound');
-  btn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      btn.textContent = '🔊';
-    } else {
-      audio.pause();
-      btn.textContent = '🔇';
-    }
-  });
-
-  const bars = document.querySelectorAll('.bar');
-  const skills = document.querySelector('.skills');
-  skills.addEventListener('mouseenter', () => {
-    bars.forEach(bar => {
-      const width = bar.getAttribute('data-width');
-      bar.style.width = width;
-    });
-  });
-  skills.addEventListener('mouseleave', () => {
-    bars.forEach(bar => {
-      bar.style.width = '0';
-    });
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
