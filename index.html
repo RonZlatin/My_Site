@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ron Zlatin | QA Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<audio id="ocean-sound" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/04/audio_b19c5224db.mp3?filename=ocean-waves-6327.mp3" type="audio/mp3" />
+  Your browser does not support the audio element.
+</audio>
+
+<button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
+
+<header class="animated-header">
+  <h1>Ron Zlatin | QA Portfolio</h1>
+  <p>Testing the Waves of Quality</p>
+  <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-button">
+    🌐 My LinkedIn
+  </a>
+</header>
+
+<section class="intro highlighted">
+  <h2>About Me</h2>
+  <p>
+    Welcome to my Quality Assurance portfolio! I'm Ron Zlatin, a dedicated QA specialist with a deep appreciation for precision and detail.
+    My passion lies in uncovering bugs, improving systems, and enhancing user experience.<br><br>
+    I'm always learning and evolving, whether through hands-on testing, automation tools, or understanding user behavior.
+    With strong analytical skills and a calm, methodical approach, I strive to raise the bar for every project I join.<br><br>
+    I believe that great software deserves great QA — and that mindset drives me every day.
+    Here you'll find not only my skills, but also glimpses of who I am beyond the screen.
+  </p>
+</section>
+
+<section class="gallery">
+  <h2>Personal Gallery</h2>
+  <div class="image-grid">
+    <img src="your-photo1.jpg" alt="Personal Moment 1" />
+    <img src="your-photo2.jpg" alt="Personal Moment 2" />
+    <img src="your-photo3.jpg" alt="Personal Moment 3" />
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Skills & Tools</h2>
+  <ul>
+    <li><span>Manual Testing</span><span class="label">95%</span><div class="bar" data-width="95%"></div></li>
+    <li><span>Selenium / WebDriver</span><span class="label">90%</span><div class="bar" data-width="90%"></div></li>
+    <li><span>Postman & API Testing</span><span class="label">92%</span><div class="bar" data-width="92%"></div></li>
+    <li><span>JIRA & TestRail</span><span class="label">87%</span><div class="bar" data-width="87%"></div></li>
+    <li><span>Agile & Scrum Methodologies</span><span class="label">85%</span><div class="bar" data-width="85%"></div></li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Ron Zlatin. Crafted with care 🌊</p>
+</footer>
+
+<script>
+  const audio = document.getElementById('ocean-sound');
+  const btn = document.getElementById('toggle-sound');
+  btn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '🔊';
+    } else {
+      audio.pause();
+      btn.textContent = '🔇';
+    }
+  });
+
+  const bars = document.querySelectorAll('.bar');
+  const skills = document.querySelector('.skills');
+  skills.addEventListener('mouseenter', () => {
+    bars.forEach(bar => {
+      const width = bar.getAttribute('data-width');
+      bar.style.width = width;
+    });
+  });
+  skills.addEventListener('mouseleave', () => {
+    bars.forEach(bar => {
+      bar.style.width = '0';
+    });
+  });
+</script>
+
+</body>
+</html>
