@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ron Zlatin | QA & Travel Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.03);
+    }
+    .gallery h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,60 +60,38 @@
     Traveling helps me see different cultures, sharpen my observational skills, and inspire new perspectives.  
     From bustling cities to quiet landscapes, I capture photos that tell stories and preserve memories.  
     I believe that detailed QA work and photography both require patience, precision, and passion.<br><br>
+    📬 <strong>Feel free to <a href="mailto:ron.zlatin.it@gmail.com" style="color: #80deea;">email me directly</a>.</strong>
   </p>
 </section>
 
 <section class="skills">
   <h2>Skills</h2>
   <ul>
-    <li>
-      Manual Testing <span class="label">95%</span>
-      <div class="bar" style="width: 95%;"></div>
-    </li>
-    <li>
-      Test Scenario Writing <span class="label">93%</span>
-      <div class="bar" style="width: 93%;"></div>
-    </li>
-    <li>
-      Selenium with Python <span class="label">91%</span>
-      <div class="bar" style="width: 91%;"></div>
-    </li>
-    <li>
-      Bug Reporting <span class="label">94%</span>
-      <div class="bar" style="width: 94%;"></div>
-    </li>
-    <li>
-      Regression Testing <span class="label">92%</span>
-      <div class="bar" style="width: 92%;"></div>
-    </li>
-    <li>
-      Exploratory Testing <span class="label">93%</span>
-      <div class="bar" style="width: 93%;"></div>
-    </li>
-    <li>
-      UI/UX Testing <span class="label">91%</span>
-      <div class="bar" style="width: 91%;"></div>
-    </li>
-    <li>
-      Documentation & Communication <span class="label">95%</span>
-      <div class="bar" style="width: 95%;"></div>
-    </li>
+    <li>Manual Testing <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
+    <li>Test Scenario Writing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
+    <li>Selenium with Python <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
+    <li>Bug Reporting <span class="label">94%</span><div class="bar" style="width: 94%;"></div></li>
+    <li>Regression Testing <span class="label">92%</span><div class="bar" style="width: 92%;"></div></li>
+    <li>Exploratory Testing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
+    <li>UI/UX Testing <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
+    <li>Documentation & Communication <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
   </ul>
 </section>
 
 <section class="gallery">
   <h2>Travel Memories</h2>
   <div class="image-grid">
-    <img src="italy1.jpg" alt="Travel 1" />
-    <img src="italy2.jpg" alt="Travel 2" />
-    <img src="italy3.jpg" alt="Travel 3" />
-    <img src="italy4.jpg" alt="Travel 4" />
+    <img src="italy1.jpg" alt="Italy Trip 1" />
+    <img src="italy2.jpg" alt="Italy Trip 2" />
+    <img src="italy3.jpg" alt="Italy Trip 3" />
+    <img src="italy4.jpg" alt="Italy Trip 4" />
   </div>
 </section>
 
 <footer>
   &copy; 2025 Ron Zlatin | QA & Travel Portfolio<br>
-  </footer>
+  📬 Email: <a href="mailto:ron.zlatin.it@gmail.com" style="color: #e0f7fa;">ron.zlatin.it@gmail.com</a>
+</footer>
 
 <script>
   const audio = document.getElementById("ocean-sound");
