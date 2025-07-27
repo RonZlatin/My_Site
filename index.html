@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ron Zlatin | QA Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>רון זלטין | פורטפוליו QA</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <audio id="ocean-sound" loop preload="auto">
   <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
-  Your browser does not support the audio element.
+  הדפדפן שלך לא תומך בהשמעת קול.
 </audio>
+
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
 <header class="animated-header">
-  <h1>Ron Zlatin | QA Portfolio</h1>
-  <p>Testing the Waves of Quality</p>
-  <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-button">
-    🌐 My LinkedIn
-  </a>
+  <h1>רון זלטין</h1>
+  <p>בודק תוכנה | לומד QA | שואף למצוינות</p>
+  <a href="mailto:ron.zlatin.it@gmail.com" class="linkedin-button">📧 צור קשר</a>
+  <a href="https://github.com/ronzlatin" target="_blank" class="linkedin-button">💻 GitHub שלי</a>
 </header>
 
 <section class="intro highlighted">
-  <h2>About Me</h2>
-  <p>
-    Welcome to my Quality Assurance portfolio! I'm Ron Zlatin, a dedicated QA specialist with a deep appreciation for precision and detail.
-    My passion lies in uncovering bugs, improving systems, and enhancing user experience.<br><br>
-    I'm always learning and evolving, whether through hands-on testing, automation tools, or understanding user behavior.
-    With strong analytical skills and a calm, methodical approach, I strive to raise the bar for every project I join.<br><br>
-    I believe that great software deserves great QA — and that mindset drives me every day.
-    Here you'll find not only my skills, but also glimpses of who I am beyond the screen.
-  </p>
-</section>
-
-<section class="gallery">
-  <h2>Personal Gallery</h2>
-  <div class="image-grid">
-    <img src="your-photo1.jpg" alt="Personal Moment 1" />
-    <img src="your-photo2.jpg" alt="Personal Moment 2" />
-    <img src="your-photo3.jpg" alt="Personal Moment 3" />
-  </div>
+  <h2>עליי</h2>
+  <p>אני רון זלטין, לומד בדיקות תוכנה (QA) עם תשוקה לטכנולוגיה, הקפדה על פרטים, והתמדה. אני מתרגל תרחישי בדיקה, דיווח באגים, וכלים כמו Selenium ו-SQL. מחפש להמשיך להתפתח בתחום ולהיות חלק מצוות מנצח.</p>
 </section>
 
 <section class="skills">
-  <h2>Skills & Tools</h2>
+  <h2>כישורים</h2>
   <ul>
-    <li><span>Manual Testing</span><span class="label">95%</span><div class="bar" data-width="95%"></div></li>
-    <li><span>Selenium / WebDriver</span><span class="label">90%</span><div class="bar" data-width="90%"></div></li>
-    <li><span>Postman & API Testing</span><span class="label">92%</span><div class="bar" data-width="92%"></div></li>
-    <li><span>JIRA & TestRail</span><span class="label">87%</span><div class="bar" data-width="87%"></div></li>
-    <li><span>Agile & Scrum Methodologies</span><span class="label">85%</span><div class="bar" data-width="85%"></div></li>
+    <li>בדיקות ידניות (Manual Testing) <span class="label">ביניים</span><div class="bar" style="width: 70%"></div></li>
+    <li>כתיבת תסריטי בדיקה <span class="label">ביניים</span><div class="bar" style="width: 60%"></div></li>
+    <li>SQL בסיסי <span class="label">מתחיל</span><div class="bar" style="width: 50%"></div></li>
+    <li>Selenium עם Python <span class="label">בדרך לשם</span><div class="bar" style="width: 40%"></div></li>
   </ul>
 </section>
 
+<section class="gallery">
+  <h2>פרויקטים / תרגולים</h2>
+  <div class="image-grid">
+    <img src="https://source.unsplash.com/featured/?technology,code" alt="QA Image 1" />
+    <img src="https://source.unsplash.com/featured/?software,testing" alt="QA Image 2" />
+    <img src="https://source.unsplash.com/featured/?keyboard,developer" alt="QA Image 3" />
+  </div>
+</section>
+
 <footer>
-  <p>&copy; 2025 Ron Zlatin. Crafted with care 🌊</p>
+  &copy; 2025 רון זלטין | אתר אישי לתחום ה-QA<br>
+  📧 אימייל ליצירת קשר: <a href="mailto:ron.zlatin.it@gmail.com" style="color: #e0f7fa;">ron.zlatin.it@gmail.com</a>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  const audio = document.getElementById("ocean-sound");
+  const button = document.getElementById("toggle-sound");
+  let isPlaying = false;
+
+  button.addEventListener("click", () => {
+    isPlaying ? audio.pause() : audio.play();
+    isPlaying = !isPlaying;
+    button.textContent = isPlaying ? "🔊" : "🔇";
+  });
+</script>
+
 </body>
 </html>
