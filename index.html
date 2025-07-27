@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ron Zlatin | QA & Travel Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<audio id="ocean-sound" loop preload="auto">
+  <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
+  Your browser does not support the audio element.
+</audio>
+
+<button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
+
+<header class="animated-header">
+  <h1>Ron Zlatin</h1>
+  <p>QA Tester in Training • Adventurer • Detail-Oriented • Eager to Learn</p>
+  <a href="mailto:ron.zlatin.it@gmail.com" class="linkedin-button">📧 Contact Me</a>
+</header>
+
 <section class="intro highlighted">
   <h2>About Me</h2>
   <p>
@@ -8,7 +31,58 @@
     Traveling helps me see different cultures, sharpen my observational skills, and inspire new perspectives.  
     From bustling cities to quiet landscapes, I capture photos that tell stories and preserve memories.  
     I believe that detailed QA work and photography both require patience, precision, and passion.<br><br>
-    📬 <strong>Contact me via email:</strong>  
-    <a href="mailto:ron.zlatin.it@gmail.com" style="color: #80deea; font-weight: bold;">ron.zlatin.it@gmail.com</a>
+    📬 <strong>Feel free to <a href="mailto:ron.zlatin.it@gmail.com" style="color: #80deea;">email me directly</a>.</strong>
   </p>
 </section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>
+      Manual Testing <span class="label">95%</span>
+      <div class="bar" style="width: 95%;"></div>
+    </li>
+    <li>
+      Test Scenario Writing <span class="label">93%</span>
+      <div class="bar" style="width: 93%;"></div>
+    </li>
+    <li>
+      SQL (Basic Queries) <span class="label">90%</span>
+      <div class="bar" style="width: 90%;"></div>
+    </li>
+    <li>
+      Selenium with Python <span class="label">91%</span>
+      <div class="bar" style="width: 91%;"></div>
+    </li>
+  </ul>
+</section>
+
+<section class="gallery">
+  <h2>Travel Memories</h2>
+  <div class="image-grid">
+    <img src="your-photo1.jpg" alt="Travel 1" />
+    <img src="your-photo2.jpg" alt="Travel 2" />
+    <img src="your-photo3.jpg" alt="Travel 3" />
+    <img src="your-photo4.jpg" alt="Travel 4" />
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Ron Zlatin | QA & Travel Portfolio<br>
+  📬 Email: <a href="mailto:ron.zlatin.it@gmail.com" style="color: #e0f7fa;">ron.zlatin.it@gmail.com</a>
+</footer>
+
+<script>
+  const audio = document.getElementById("ocean-sound");
+  const button = document.getElementById("toggle-sound");
+  let isPlaying = false;
+
+  button.addEventListener("click", () => {
+    isPlaying ? audio.pause() : audio.play();
+    isPlaying = !isPlaying;
+    button.textContent = isPlaying ? "🔊" : "🔇";
+  });
+</script>
+
+</body>
+</html>
