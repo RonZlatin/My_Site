@@ -5,29 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ron Zlatin | QA & Travel Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/34f8de3ba6.js" crossorigin="anonymous"></script>
   <style>
     .linkedin-icon {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      bottom: 20px;
+      left: 20px;
       background-color: #0077b5;
       color: white;
       border-radius: 50%;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
+      z-index: 500;
       transition: transform 0.2s ease;
     }
     .linkedin-icon:hover {
       transform: scale(1.1);
     }
+
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -46,6 +45,7 @@
     .image-grid img:hover {
       transform: scale(1.03);
     }
+
     .lightbox {
       display: none;
       position: fixed;
@@ -80,14 +80,27 @@
 </head>
 <body>
 
+<!-- מוזיקה -->
 <audio id="ocean-sound" loop preload="auto">
   <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
 </audio>
-
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
+<!-- לינקדאין -->
 <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-icon" title="My LinkedIn">
-  <i class="fab fa-linkedin-in"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 
+             2.761 2.239 5 5 5h14c2.761 0 5-2.239 
+             5-5v-14c0-2.761-2.239-5-5-5zm-11 
+             19h-3v-10h3v10zm-1.5-11.268c-.966 
+             0-1.75-.784-1.75-1.75s.784-1.75 
+             1.75-1.75 1.75.784 
+             1.75 1.75-.784 1.75-1.75 
+             1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.869 
+             0-2.156 1.459-2.156 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+             1.379-1.562 2.838-1.562 3.033 0 3.593 1.996 3.593 
+             4.59v5.605z"/>
+  </svg>
 </a>
 
 <header class="animated-header">
