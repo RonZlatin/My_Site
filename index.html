@@ -12,16 +12,21 @@
       gap: 20px;
       padding: 20px;
     }
-    .image-grid img {
-      width: 100%;
-      height: 250px;
+    .image-grid a {
+      display: block;
+      overflow: hidden;
       border-radius: 12px;
-      object-fit: cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-    .image-grid img:hover {
+    .image-grid a:hover {
       transform: scale(1.03);
+    }
+    .image-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
     }
     .gallery h2 {
       text-align: center;
@@ -29,16 +34,25 @@
       font-size: 2rem;
     }
     .linkedin-icon {
-      font-size: 1.8rem;
-      text-decoration: none;
-      color: #0077b5;
-      transition: opacity 0.3s ease;
-      position: absolute;
+      position: fixed;
       top: 20px;
       right: 20px;
+      background-color: #0077b5;
+      color: white;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: transform 0.2s ease;
     }
     .linkedin-icon:hover {
-      opacity: 0.7;
+      transform: scale(1.1);
     }
     footer {
       text-align: center;
@@ -46,7 +60,6 @@
       padding: 20px;
     }
   </style>
-  <!-- לינקדאין אייקון מאוסף fontawesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -58,9 +71,9 @@
 
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
-<!-- אייקון לינקדאין קבוע למעלה -->
+<!-- כפתור לינקדאין -->
 <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-icon" title="My LinkedIn">
-  <i class="fab fa-linkedin"></i>
+  <i class="fab fa-linkedin-in"></i>
 </a>
 
 <header class="animated-header">
@@ -99,10 +112,10 @@
 <section class="gallery">
   <h2>Travel Memories</h2>
   <div class="image-grid">
-    <img src="italy1.jpg" alt="Italy Trip 1" />
-    <img src="italy2.jpg" alt="Italy Trip 2" />
-    <img src="italy3.jpg" alt="Italy Trip 3" />
-    <img src="italy4.jpg" alt="Italy Trip 4" />
+    <a href="italy1.jpg" target="_blank"><img src="italy1.jpg" alt="Italy Trip 1" /></a>
+    <a href="italy2.jpg" target="_blank"><img src="italy2.jpg" alt="Italy Trip 2" /></a>
+    <a href="italy3.jpg" target="_blank"><img src="italy3.jpg" alt="Italy Trip 3" /></a>
+    <a href="italy4.jpg" target="_blank"><img src="italy4.jpg" alt="Italy Trip 4" /></a>
   </div>
 </section>
 
@@ -115,6 +128,7 @@
   const audio = document.getElementById("ocean-sound");
   const button = document.getElementById("toggle-sound");
   let isPlaying = false;
+
   button.addEventListener("click", () => {
     isPlaying ? audio.pause() : audio.play();
     isPlaying = !isPlaying;
