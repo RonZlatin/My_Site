@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ron Zlatin | QA & Travel Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/34f8de3ba6.js" crossorigin="anonymous"></script>
   <style>
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .image-grid a {
-      display: block;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .image-grid a:hover {
-      transform: scale(1.03);
-    }
-    .image-grid img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-    }
-    .gallery h2 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 2rem;
-    }
+    /* לינקדאין אייקון */
     .linkedin-icon {
       position: fixed;
       top: 20px;
@@ -54,24 +27,64 @@
     .linkedin-icon:hover {
       transform: scale(1.1);
     }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
+
+    /* גלריה */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       padding: 20px;
     }
+    .image-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<!-- מוזיקה -->
 <audio id="ocean-sound" loop preload="auto">
   <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
-  Your browser does not support the audio element.
 </audio>
-
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
-<!-- כפתור לינקדאין -->
+<!-- לינקדאין -->
 <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-icon" title="My LinkedIn">
   <i class="fab fa-linkedin-in"></i>
 </a>
@@ -81,43 +94,35 @@
   <p>QA Tester in Training • Adventurer • Detail-Oriented • Eager to Learn</p>
 </header>
 
-<section class="intro highlighted">
-  <h2>About Me</h2>
-  <p>
-    I'm Ron Zlatin, combining my passion for software QA with a love for travel and exploration.  
-    As a QA tester in training, I focus on manual testing, bug reporting, and writing detailed test scenarios.  
-    My journey into quality assurance is fueled by curiosity, ambition, and a desire to deliver flawless user experiences.  
-    I enjoy working with tools like Selenium and SQL, constantly improving my skills with hands-on practice.  
-    Traveling helps me see different cultures, sharpen my observational skills, and inspire new perspectives.  
-    From bustling cities to quiet landscapes, I capture photos that tell stories and preserve memories.  
-    I believe that detailed QA work and photography both require patience, precision, and passion.<br><br>
-    📬 <strong>Feel free to <a href="mailto:ron.zlatin.it@gmail.com" style="color: #80deea;">email me directly</a>.</strong>
-  </p>
-</section>
-
-<section class="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Manual Testing <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
-    <li>Test Scenario Writing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
-    <li>Selenium with Python <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
-    <li>Bug Reporting <span class="label">94%</span><div class="bar" style="width: 94%;"></div></li>
-    <li>Regression Testing <span class="label">92%</span><div class="bar" style="width: 92%;"></div></li>
-    <li>Exploratory Testing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
-    <li>UI/UX Testing <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
-    <li>Documentation & Communication <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
-  </ul>
-</section>
+<!-- ABOUT, SKILLS, וכו' ממשיכים כאן כרגיל -->
 
 <section class="gallery">
   <h2>Travel Memories</h2>
   <div class="image-grid">
-    <a href="italy1.jpg" target="_blank"><img src="italy1.jpg" alt="Italy Trip 1" /></a>
-    <a href="italy2.jpg" target="_blank"><img src="italy2.jpg" alt="Italy Trip 2" /></a>
-    <a href="italy3.jpg" target="_blank"><img src="italy3.jpg" alt="Italy Trip 3" /></a>
-    <a href="italy4.jpg" target="_blank"><img src="italy4.jpg" alt="Italy Trip 4" /></a>
+    <a href="#img1"><img src="italy1.jpg" alt="Italy 1" /></a>
+    <a href="#img2"><img src="italy2.jpg" alt="Italy 2" /></a>
+    <a href="#img3"><img src="italy3.jpg" alt="Italy 3" /></a>
+    <a href="#img4"><img src="italy4.jpg" alt="Italy 4" /></a>
   </div>
 </section>
+
+<!-- lightbox modals -->
+<div id="img1" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="italy1.jpg" alt="Full Italy 1" />
+</div>
+<div id="img2" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="italy2.jpg" alt="Full Italy 2" />
+</div>
+<div id="img3" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="italy3.jpg" alt="Full Italy 3" />
+</div>
+<div id="img4" class="lightbox">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="italy4.jpg" alt="Full Italy 4" />
+</div>
 
 <footer>
   &copy; 2025 Ron Zlatin | QA & Travel Portfolio<br>
@@ -128,7 +133,6 @@
   const audio = document.getElementById("ocean-sound");
   const button = document.getElementById("toggle-sound");
   let isPlaying = false;
-
   button.addEventListener("click", () => {
     isPlaying ? audio.pause() : audio.play();
     isPlaying = !isPlaying;
