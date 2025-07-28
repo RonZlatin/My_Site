@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -5,7 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/34f8de3ba6.js" crossorigin="anonymous"></script>
   <style>
-    /* לינקדאין אייקון */
     .linkedin-icon {
       position: fixed;
       top: 20px;
@@ -27,8 +28,6 @@
     .linkedin-icon:hover {
       transform: scale(1.1);
     }
-
-    /* גלריה */
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -47,8 +46,6 @@
     .image-grid img:hover {
       transform: scale(1.03);
     }
-
-    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -74,17 +71,21 @@
       color: white;
       text-decoration: none;
     }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
 
-<!-- מוזיקה -->
 <audio id="ocean-sound" loop preload="auto">
   <source src="Ocean-waves-sound-effect.mp3" type="audio/mp3" />
 </audio>
+
 <button id="toggle-sound" aria-label="Toggle Ocean Sound" title="Toggle Ocean Sound">🔇</button>
 
-<!-- לינקדאין -->
 <a href="https://www.linkedin.com/in/ron-zlatin-59790357" target="_blank" class="linkedin-icon" title="My LinkedIn">
   <i class="fab fa-linkedin-in"></i>
 </a>
@@ -94,34 +95,60 @@
   <p>QA Tester in Training • Adventurer • Detail-Oriented • Eager to Learn</p>
 </header>
 
-<!-- ABOUT, SKILLS, וכו' ממשיכים כאן כרגיל -->
+<section class="intro highlighted">
+  <h2>About Me</h2>
+  <p>
+    I'm Ron Zlatin, combining my passion for software QA with a love for travel and exploration.  
+    I focus on manual testing, bug reporting, and writing detailed test scenarios.  
+    My journey into QA is fueled by curiosity, ambition, and a desire to deliver flawless user experiences.  
+    I enjoy working with tools like Selenium and SQL, constantly improving with hands-on practice.  
+    Traveling sharpens my eye for detail and inspires new perspectives.  
+    From bustling cities to quiet landscapes, I capture memories through photography.  
+    I believe QA and photography both require patience, precision, and passion.<br><br>
+    📬 <strong>Feel free to <a href="mailto:ron.zlatin.it@gmail.com" style="color: #80deea;">email me directly</a>.</strong>
+  </p>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Manual Testing <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
+    <li>Test Scenario Writing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
+    <li>Selenium with Python <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
+    <li>Bug Reporting <span class="label">94%</span><div class="bar" style="width: 94%;"></div></li>
+    <li>Regression Testing <span class="label">92%</span><div class="bar" style="width: 92%;"></div></li>
+    <li>Exploratory Testing <span class="label">93%</span><div class="bar" style="width: 93%;"></div></li>
+    <li>UI/UX Testing <span class="label">91%</span><div class="bar" style="width: 91%;"></div></li>
+    <li>Documentation & Communication <span class="label">95%</span><div class="bar" style="width: 95%;"></div></li>
+  </ul>
+</section>
 
 <section class="gallery">
   <h2>Travel Memories</h2>
   <div class="image-grid">
-    <a href="#img1"><img src="italy1.jpg" alt="Italy 1" /></a>
-    <a href="#img2"><img src="italy2.jpg" alt="Italy 2" /></a>
-    <a href="#img3"><img src="italy3.jpg" alt="Italy 3" /></a>
-    <a href="#img4"><img src="italy4.jpg" alt="Italy 4" /></a>
+    <a href="#img1"><img src="italy1.jpg" alt="Italy Trip 1" /></a>
+    <a href="#img2"><img src="italy2.jpg" alt="Italy Trip 2" /></a>
+    <a href="#img3"><img src="italy3.jpg" alt="Italy Trip 3" /></a>
+    <a href="#img4"><img src="italy4.jpg" alt="Italy Trip 4" /></a>
   </div>
 </section>
 
-<!-- lightbox modals -->
+<!-- Lightbox -->
 <div id="img1" class="lightbox">
   <a href="#" class="lightbox-close">&times;</a>
-  <img src="italy1.jpg" alt="Full Italy 1" />
+  <img src="italy1.jpg" alt="Italy Full 1" />
 </div>
 <div id="img2" class="lightbox">
   <a href="#" class="lightbox-close">&times;</a>
-  <img src="italy2.jpg" alt="Full Italy 2" />
+  <img src="italy2.jpg" alt="Italy Full 2" />
 </div>
 <div id="img3" class="lightbox">
   <a href="#" class="lightbox-close">&times;</a>
-  <img src="italy3.jpg" alt="Full Italy 3" />
+  <img src="italy3.jpg" alt="Italy Full 3" />
 </div>
 <div id="img4" class="lightbox">
   <a href="#" class="lightbox-close">&times;</a>
-  <img src="italy4.jpg" alt="Full Italy 4" />
+  <img src="italy4.jpg" alt="Italy Full 4" />
 </div>
 
 <footer>
